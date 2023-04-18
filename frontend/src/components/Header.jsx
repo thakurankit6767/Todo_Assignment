@@ -18,11 +18,6 @@ const Header = () => {
           </Link>
         </li>
         <li className="navbar-item">
-          <Link to="/edittodo" className="navbar-link">
-            Edit Todo
-          </Link>
-        </li>
-        <li className="navbar-item">
           {/* Add the CSS class name */}
           <Link to="/login" className="navbar-link">
             Login
