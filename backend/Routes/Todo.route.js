@@ -8,8 +8,6 @@ const TodoRoute = express.Router();
 // Employee module which is required and imported
 let TodoModel = require("../Model/Todo");
 
-
-
 TodoRoute.get("/", async (req, res) => {
   try {
     const allTodoItems = await TodoModel.find({});
@@ -19,9 +17,9 @@ TodoRoute.get("/", async (req, res) => {
   }
 });
 
-// // post List Of Todo
+// // post List Of todo
 
-TodoRoute.post("/addtodo", async (req, res) => {
+TodoRoute.post("/addTodo", async (req, res) => {
   try {
     const newItem = new TodoModel(req.body);
     //save this item in database
@@ -31,8 +29,5 @@ TodoRoute.post("/addtodo", async (req, res) => {
     res.json(err);
   }
 });
-
-
-
 
 module.exports = TodoRoute;

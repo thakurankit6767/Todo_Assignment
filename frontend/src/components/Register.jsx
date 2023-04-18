@@ -15,7 +15,7 @@ const Register = () => {
       [name]: value,
     });
   };
-  //register function
+ 
   const register = () => {
     const { name, email, password } = user;
     if (name && email && password) {
@@ -27,28 +27,21 @@ const Register = () => {
     }
     return (
       <>
-        <div >
-          <div >
-            Create a new account
-          </div>
-          <span >
+        <div>
+          <div>Create a new account</div>
+          <span>
             Already have an account ?
-            <a
-              href="#"
-              target="_blank"
-             
-            >
+            <a href="#" target="_blank">
               Sign in
             </a>
           </span>
-          <div class="p-6 mt-8">
-            <form action="#">
-              <div class="flex flex-col mb-2">
+          <div >
+            <form >
+              <div >
                 <div class=" relative ">
                   <input
                     type="text"
                     id="create-account-pseudo"
-                   
                     name="name"
                     value={user.name}
                     onChange={handleChange}
@@ -56,12 +49,11 @@ const Register = () => {
                   />
                 </div>
               </div>
-              <div class="flex gap-4 mb-2">
+              <div >
                 <div class=" relative ">
                   <input
                     type="text"
                     id="create-account-first-name"
-                    
                     name="email"
                     value={user.email}
                     onChange={handleChange}
@@ -69,12 +61,11 @@ const Register = () => {
                   />
                 </div>
               </div>
-              <div class="flex flex-col mb-2">
+              <div >
                 <div class=" relative ">
                   <input
                     type="password"
                     id="create-account-email"
-                   
                     name="password"
                     value={user.password}
                     onChange={handleChange}
@@ -82,12 +73,8 @@ const Register = () => {
                   />
                 </div>
               </div>
-              <div class="flex w-full my-4">
-                <button
-                  type="submit"
-                 
-                  onClick={register}
-                >
+              <div >
+                <button type="submit" onClick={register}>
                   Register
                 </button>
               </div>

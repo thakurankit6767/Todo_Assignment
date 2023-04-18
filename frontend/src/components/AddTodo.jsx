@@ -7,7 +7,7 @@ const customStyle = {
   margin: "0 auto",
 };
 
-const AddTodo = (props) => {
+const AddTodo = () => {
   const [firstName, setFirstName] = useState("");
 
   let navigate = useNavigate();
@@ -25,7 +25,7 @@ const AddTodo = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:4000/Todo/addTodo", {
+      .post("http://localhost:4000/todo/addtodo", {
         firstName: firstName,
       })
       .then((response) => {
