@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const TodoRoute = express.Router();
 
-// Employee module which is required and imported
+// todo module which is required and imported
 let TodoModel = require("../Model/Todo");
 
 TodoRoute.get("/", async (req, res) => {
@@ -30,7 +30,7 @@ TodoRoute.post("/addtodo", async (req, res) => {
   }
 });
 
-// To Get Employee Details By Employee ID
+// To Get todo Details By todo ID
 TodoRoute.get("/edittodo/:id", async (req, res) => {
   try {
     //find the item by its id and update it

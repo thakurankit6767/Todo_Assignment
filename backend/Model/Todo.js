@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// List of columns for Employee schema
+// List of columns for todo schema
 let Todo = new Schema(
   {
     todo: String,
