@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 
 var divStyle = {
@@ -11,6 +11,7 @@ var divStyle = {
 
 function Todo() {
   const [todos, setTodos] = useState([]);
+  const navigate = useNavigate(); // Get history from react-router-dom
 
   useEffect(() => {
     fetchTodos();
@@ -40,6 +41,10 @@ function Todo() {
       });
   }
 
+  function handleEdit(todoId) {
+    navigate(`/edittodo/${todoId}`);
+  }
+
   return (
     <div style={divStyle}>
       <Table responsive>
@@ -47,7 +52,7 @@ function Todo() {
           <tr>
             <th>#</th>
             <th>Todo</th>
-            <th>Actions</th> {/* Add a new column for delete action */}
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -59,9 +64,16 @@ function Todo() {
                 <td>
                   <Button
                     variant="danger"
-                    onClick={() => handleDelete(todo._id)} // Add onClick event handler for delete
+                    onClick={() => handleDelete(todo._id)}
                   >
                     Delete
+                  </Button>{" "}
+                  {/* Add a space between buttons */}
+                  <Button
+                    variant="primary"
+                    onClick={() => handleEdit(todo._id)}
+                  >
+                    Edit
                   </Button>
                 </td>
               </tr>

@@ -39,21 +39,21 @@ const AddTodo = () => {
 
   return (
     <div className="container">
-    <form style={customStyle} onSubmit={handleSubmit}>
-      <label>
-        Todo
-        <input
-          name="todo" // Update the name attribute to "todo"
-          type="text"
-          value={todo}
-          onChange={handleChange}
-          className="form-control"
-        />
-      </label>
-      <br />
-      <input type="submit" value="submit" className="btn btn-primary" />
-    </form>
-  </div>
+      <form style={customStyle} onSubmit={handleSubmit}>
+        <label>
+          Todo
+          <input
+            name="todo"
+            type="text"
+            value={todo}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </label>
+        <br />
+        <input type="submit" value="submit" className="btn btn-primary" />
+      </form>
+    </div>
   );
 };
 
