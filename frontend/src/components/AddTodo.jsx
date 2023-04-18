@@ -8,14 +8,14 @@ const customStyle = {
 };
 
 const AddTodo = () => {
-  const [firstName, setFirstName] = useState("");
+  const [todo, setFirstName] = useState("");
 
   let navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     switch (name) {
-      case "firstName":
+      case "todo":
         setFirstName(value);
         break;
       default:
@@ -26,7 +26,7 @@ const AddTodo = () => {
     event.preventDefault();
     axios
       .post("http://localhost:4000/todo/addtodo", {
-        firstName: firstName,
+        todo: todo,
       })
       .then((response) => {
         console.log(response);
@@ -45,7 +45,7 @@ const AddTodo = () => {
           <input
             name="firstName"
             type="text"
-            value={firstName}
+            value={todo}
             onChange={handleChange}
             className="form-control"
           />
