@@ -11,7 +11,7 @@ var divStyle = {
 
 function Todo() {
   const [todos, setTodos] = useState([]);
-  const navigate = useNavigate(); // Get history from react-router-dom
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     fetchTodos();
@@ -40,8 +40,6 @@ function Todo() {
         console.log(error);
       });
   }
-
- 
 
   return (
     <div style={divStyle}>

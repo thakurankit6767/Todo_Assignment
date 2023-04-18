@@ -16,13 +16,11 @@ const Login = ({ setLoginUser }) => {
     });
   };
 
- 
-
   const login = () => {
     axios.post("http://localhost:4000/Login", user).then((res) => {
-      alert(res.data.message);
       setLoginUser(res.data.user);
       navigate("/");
+      alert(res.data.message);
     });
   };
 
