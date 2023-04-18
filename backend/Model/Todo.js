@@ -4,9 +4,7 @@ const Schema = mongoose.Schema;
 // List of columns for Employee schema
 let Todo = new Schema(
   {
-    todo: {
-      type: String,
-    },
+    todo: String,
   },
   {
     collection: "todos",

@@ -8,7 +8,7 @@ const customStyle = {
 };
 
 const AddTodo = () => {
-  const [todo, setFirstName] = useState("");
+  const [todo, setTodo] = useState("");
 
   let navigate = useNavigate();
 
@@ -16,7 +16,7 @@ const AddTodo = () => {
     const { name, value } = event.target;
     switch (name) {
       case "todo":
-        setFirstName(value);
+        setTodo(value);
         break;
       default:
     }
@@ -39,21 +39,21 @@ const AddTodo = () => {
 
   return (
     <div className="container">
-      <form style={customStyle} onSubmit={handleSubmit}>
-        <label>
-          Todo
-          <input
-            name="firstName"
-            type="text"
-            value={todo}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </label>
-        <br />
-        <input type="submit" value="submit" className="btn btn-primary" />
-      </form>
-    </div>
+    <form style={customStyle} onSubmit={handleSubmit}>
+      <label>
+        Todo
+        <input
+          name="todo" // Update the name attribute to "todo"
+          type="text"
+          value={todo}
+          onChange={handleChange}
+          className="form-control"
+        />
+      </label>
+      <br />
+      <input type="submit" value="submit" className="btn btn-primary" />
+    </form>
+  </div>
   );
 };
 

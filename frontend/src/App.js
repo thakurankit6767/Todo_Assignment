@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Todo from "./components/Todo";
 import AddTodo from "./components/AddTodo";
 import Header from "./components/Header";
-import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import EditTodo from "./components/EditTodo";
 
 const App = () => {
   const [user, setLoginUser] = useState({});
@@ -19,6 +19,7 @@ const App = () => {
         <Route path="/addtodo" element={<AddTodo />} />
         <Route path="/Login" element={<Login setLoginUser={setLoginUser} />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/edittodo" element={<EditTodo />} />
       </Routes>
     </div>
   );

@@ -10,18 +10,30 @@ var divStyle = {
 };
 
 function Todo() {
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    TodoList();
+    fetchTodos();
   }, []);
 
-  function TodoList() {
+  function fetchTodos() {
     axios
       .get("http://localhost:4000/todo")
       .then((response) => {
         console.log(response);
-        setTodo(response.data);
+        setTodos(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  function handleDelete(todoId) {
+    axios
+      .delete(`http://localhost:4000/todo/deletetodo/${todoId}`)
+      .then((response) => {
+        console.log(response);
+        fetchTodos(); // Fetch updated todos after successful deletion
       })
       .catch((error) => {
         console.log(error);
@@ -35,14 +47,23 @@ function Todo() {
           <tr>
             <th>#</th>
             <th>Todo</th>
+            <th>Actions</th> {/* Add a new column for delete action */}
           </tr>
         </thead>
         <tbody>
-          {todo.map((todo, i) => {
+          {todos.map((todo, i) => {
             return (
               <tr key={todo._id}>
                 <td>{i + 1}</td>
                 <td>{todo.todo}</td>
+                <td>
+                  <Button
+                    variant="danger"
+                    onClick={() => handleDelete(todo._id)} // Add onClick event handler for delete
+                  >
+                    Delete
+                  </Button>
+                </td>
               </tr>
             );
           })}
