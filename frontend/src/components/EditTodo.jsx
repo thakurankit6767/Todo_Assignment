@@ -19,7 +19,7 @@ const EditTodo = () => {
     axios
       .get("http://localhost:4000/todo/edittodo/" + id)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setEmp(response.data);
       })
       .catch((error) => {

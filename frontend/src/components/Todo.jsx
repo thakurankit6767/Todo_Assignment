@@ -21,7 +21,7 @@ function Todo() {
     axios
       .get("http://localhost:4000/todo")
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setTodos(response.data);
       })
       .catch((error) => {
@@ -33,7 +33,7 @@ function Todo() {
     axios
       .delete(`http://localhost:4000/todo/deletetodo/${todoId}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         fetchTodos(); // Fetch updated todos after successful deletion
       })
       .catch((error) => {

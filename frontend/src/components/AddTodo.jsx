@@ -29,7 +29,7 @@ const AddTodo = () => {
         todo: todo,
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         navigate("/");
       })
       .catch((error) => {

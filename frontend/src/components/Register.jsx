@@ -26,7 +26,7 @@ const Register = () => {
       axios
         .post("http://localhost:4000/register", user)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           alert("Registration successful!");
           navigate("/login");
         })
