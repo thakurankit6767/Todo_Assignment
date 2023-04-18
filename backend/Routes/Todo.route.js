@@ -19,7 +19,7 @@ TodoRoute.get("/", async (req, res) => {
 
 // // post List Of todo
 
-TodoRoute.post("/addTodo", async (req, res) => {
+TodoRoute.post("/addtodo", async (req, res) => {
   try {
     const newItem = new TodoModel(req.body);
     //save this item in database
