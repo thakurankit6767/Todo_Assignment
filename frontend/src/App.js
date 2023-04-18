@@ -14,17 +14,9 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        {/* <Route
-          exact
-          path="/"
-          element={user && user._id ? <Todo /> : <Login />}
-        /> */}
+        <Route path="/" element={user && user._id ? <Todo /> : <Login />} />
         <Route path="/addtodo" element={<AddTodo />} />
-        <Route path="/" element={<Todo />} />
-        <Route
-          path="/login"
-          element={<Login setLoginUser={setLoginUser} />} 
-        />
+        <Route path="/Login" element={<Login setLoginUser={setLoginUser} />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </div>

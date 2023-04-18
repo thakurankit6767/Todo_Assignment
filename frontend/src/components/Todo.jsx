@@ -28,8 +28,6 @@ function Todo() {
       });
   }
 
-  
-
   return (
     <div style={divStyle}>
       <Table responsive>
@@ -45,8 +43,6 @@ function Todo() {
               <tr key={todo._id}>
                 <td>{i + 1}</td>
                 <td>{todo.todo}</td>
-
-                
               </tr>
             );
           })}
