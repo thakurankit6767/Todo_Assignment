@@ -41,9 +41,7 @@ function Todo() {
       });
   }
 
-  function handleEdit(todoId) {
-    navigate(`/edittodo/${todoId}`);
-  }
+ 
 
   return (
     <div style={divStyle}>
@@ -68,13 +66,12 @@ function Todo() {
                   >
                     Delete
                   </Button>{" "}
-                  {/* Add a space between buttons */}
-                  <Button
-                    variant="primary"
-                    onClick={() => handleEdit(todo._id)}
+                  <Link
+                    to={"/edittodo/" + todo._id}
+                    className="btn btn-primary"
                   >
                     Edit
-                  </Button>
+                  </Link>
                 </td>
               </tr>
             );

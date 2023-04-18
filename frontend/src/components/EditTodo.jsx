@@ -1,4 +1,3 @@
-//EditEmployee.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -51,20 +50,20 @@ const EditTodo = () => {
 
   return (
     <div className="login-container">
-      <h2>Edit Employee</h2>
-      <form onSubmit={handleSubmit} className="login-form ">
+      <h2>Edit Todo</h2>
+      <form onSubmit={handleSubmit} className="login-form">
         <label>Todo</label>
         <input
           type="text"
-          name="firstName"
+          name="todo"
           value={emp.todo}
           onChange={handleInputChange}
-          placeholder="EditTodo"
+          placeholder="Edit Todo"
           className="login-input"
         />
 
         <button type="submit" className="register-button">
-          Edit Employee
+          Edit Todo
         </button>
       </form>
     </div>

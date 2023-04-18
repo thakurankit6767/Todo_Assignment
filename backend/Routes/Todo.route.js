@@ -30,7 +30,6 @@ TodoRoute.post("/addtodo", async (req, res) => {
   }
 });
 
-
 // To Get Employee Details By Employee ID
 TodoRoute.get("/edittodo/:id", async (req, res) => {
   try {
@@ -41,8 +40,6 @@ TodoRoute.get("/edittodo/:id", async (req, res) => {
     res.json(err);
   }
 });
-
-
 
 //update item
 TodoRoute.put("/updatetodo/:id", async (req, res) => {
@@ -57,7 +54,6 @@ TodoRoute.put("/updatetodo/:id", async (req, res) => {
   }
 });
 
-
 //Delete item from database
 TodoRoute.delete("/deletetodo/:id", async (req, res) => {
   try {
@@ -68,7 +64,5 @@ TodoRoute.delete("/deletetodo/:id", async (req, res) => {
     res.json(err);
   }
 });
-
-
 
 module.exports = TodoRoute;
