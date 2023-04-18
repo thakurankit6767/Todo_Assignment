@@ -41,7 +41,7 @@ const EditTodo = () => {
       .put("http://localhost:4000/todo/updatetodo/" + id, emp)
       .then((response) => {
         console.log(response.data);
-        navigate("/list");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
